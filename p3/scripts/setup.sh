@@ -17,8 +17,11 @@ kubectl create namespace "$DEV_NAMESPACE"
 
 echo "Installing Argo CD..."
 
-kubectl apply -n "$ARGOCD_NAMESPACE" -f \
-  https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply \
+  -n "$ARGOCD_NAMESPACE" \
+  --server-side \
+  --force-conflicts \
+  -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 echo "Waiting for Argo CD to be ready..."
 
