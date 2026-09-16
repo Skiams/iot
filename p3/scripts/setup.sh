@@ -39,6 +39,6 @@ kubectl wait \
 
 echo "Applying Argo CD Application..."
 
-kubectl apply -f /home/vagrant/p3/confs/application.yaml
+kubectl apply -f ../confs/application.yaml
 
 echo "Setup complete."
